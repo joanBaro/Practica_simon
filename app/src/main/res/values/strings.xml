@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Practica_simon</string>
+    <string name="app_name">Simon</string>
+    <string name="ajuda">Ajuda</string>
+    <string name="sortir">Sortir</string>
 </resources>
