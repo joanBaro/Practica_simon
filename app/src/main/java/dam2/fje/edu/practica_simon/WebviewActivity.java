@@ -13,7 +13,7 @@ public class WebviewActivity extends ActionBarActivity {
 
         WebView webView = (WebView) findViewById(R.id.webView1);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("file:///android_res/raw/ajuda.html");
+        webView.loadUrl("file:///android_res/raw/about.html");
 
     }
 
