@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActionBarActivity" />
-        <activity android:name=".WebviewActivity"></activity>
+        <activity android:name=".WebviewActivity" />
+        <activity android:name=".SimonActivity"></activity>
     </application>
 
 </manifest>
