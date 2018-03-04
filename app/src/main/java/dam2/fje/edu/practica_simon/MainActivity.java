@@ -12,7 +12,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       Button btn = (Button)findViewById(R.id.playButton);
+
+        Button btn = (Button)findViewById(R.id.playButton);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -20,4 +21,5 @@ public class MainActivity extends ActionBarActivity {
             }
         });
     }
+
 }
