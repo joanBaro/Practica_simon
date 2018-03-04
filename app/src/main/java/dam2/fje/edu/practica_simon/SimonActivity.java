@@ -17,14 +17,43 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
     List<Integer> arrayJugador = new ArrayList<Integer>();
     List<Integer> arrayIA = new ArrayList<Integer>();
 
+    public void tornIA(){
+        //TODO mostrar imatges
+
+        Random r = new Random();
+
+        int aleatori = r.nextInt(7 - 1) + 1;
+
+        arrayIA.add(aleatori);
+
+        System.out.println("array IA: " + arrayIA);
+        System.out.println("ultima tirada IA: " +aleatori);
+
+    }
+
+    public void comprovarBoto(int numero){
+        if(arrayIA.get(arrayJugador.size()-1) != arrayJugador.get(arrayJugador.size()-1)){
+            System.out.println("has perdut");
+            //TODO jugador perd, mostrar pantalla de derrota
+        }else if (arrayJugador.size() == arrayIA.size()){
+            System.out.println("mateixa mida, juga la maquina");
+            System.out.println("arrayjugador(abans): " + arrayJugador);
+            arrayJugador.clear();
+            System.out.println("arrayjugador(despres: " + arrayJugador);
+            tornIA();
+        }else {
+            System.out.println("segueixes tirant...");
+        }
+        /*for (int i = 0; i < arrayIA.size(); i++){
+            arrayIA.get
+        }*/
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simon);
-        Random r = new Random();
-
-
-        int aleatori = r.nextInt(7 - 1) + 1; // del 1 (inclos) al 7(no inclos)
 
         Button btn1 = (Button) findViewById(R.id.button1);
         btn1.setOnClickListener(this);
@@ -39,16 +68,7 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
         Button btn6 = (Button) findViewById(R.id.button6);
         btn6.setOnClickListener(this);
 
-        boolean sortida = false;
-        do{
-            arrayIA.add(r.nextInt(7 - 1) + 1);
-            for (int i = 0; i < arrayIA.size(); i++ ){
-
-            }
-
-
-        }while(!sortida);
-
+        tornIA();
 
         /*
         ImageView img = (ImageView) findViewById(R.id.imageView1);
@@ -71,34 +91,40 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
 
             case R.id.button1:
-                System.out.println("1");
+                System.out.println("has premut: 1");
                 arrayJugador.add(1);
+                comprovarBoto(1);
                 System.out.println(arrayJugador);
                 break;
 
             case R.id.button2:
-                System.out.println("2");
+                System.out.println("has premut: 2");
                 arrayJugador.add(2);
+                comprovarBoto(2);
                 break;
 
             case R.id.button3:
-                System.out.println("3");
+                System.out.println("has premut: 3");
                 arrayJugador.add(3);
+                comprovarBoto(3);
                 break;
 
             case R.id.button4:
-                System.out.println("4");
+                System.out.println("has premut: 4");
                 arrayJugador.add(4);
+                comprovarBoto(4);
                 break;
 
             case R.id.button5:
-                System.out.println("5");
+                System.out.println("has premut: 5");
                 arrayJugador.add(5);
+                comprovarBoto(5);
                 break;
 
             case R.id.button6:
-                System.out.println("6");
+                System.out.println("has premut: 6");
                 arrayJugador.add(6);
+                comprovarBoto(6);
                 break;
 
             default:
