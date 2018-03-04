@@ -1,12 +1,10 @@
 package dam2.fje.edu.practica_simon;
 
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridView;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,12 +20,12 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
 
         Random r = new Random();
 
-        int aleatori = r.nextInt(7 - 1) + 1;
+        int aleatori = r.nextInt(13 - 1) + 1; // del 1 (inclos) al 13 (no inclos)
 
         arrayIA.add(aleatori);
 
         System.out.println("array IA: " + arrayIA);
-        System.out.println("ultima tirada IA: " +aleatori);
+        System.out.println("ultima tirada IA: " + aleatori);
 
     }
 
@@ -44,9 +42,6 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
         }else {
             System.out.println("segueixes tirant...");
         }
-        /*for (int i = 0; i < arrayIA.size(); i++){
-            arrayIA.get
-        }*/
 
     }
 
@@ -55,18 +50,30 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simon);
 
-        Button btn1 = (Button) findViewById(R.id.button1);
+        ImageButton btn1 =  (ImageButton) findViewById(R.id.button1);
         btn1.setOnClickListener(this);
-        Button btn2 = (Button) findViewById(R.id.button2);
+        ImageButton btn2 = (ImageButton) findViewById(R.id.button2);
         btn2.setOnClickListener(this);
-        Button btn3 = (Button) findViewById(R.id.button3);
+        ImageButton btn3 = (ImageButton) findViewById(R.id.button3);
         btn3.setOnClickListener(this);
-        Button btn4 = (Button) findViewById(R.id.button4);
+        ImageButton btn4 = (ImageButton) findViewById(R.id.button4);
         btn4.setOnClickListener(this);
-        Button btn5 = (Button) findViewById(R.id.button5);
+        ImageButton btn5 = (ImageButton) findViewById(R.id.button5);
         btn5.setOnClickListener(this);
-        Button btn6 = (Button) findViewById(R.id.button6);
+        ImageButton btn6 = (ImageButton) findViewById(R.id.button6);
         btn6.setOnClickListener(this);
+        ImageButton btn7 = (ImageButton) findViewById(R.id.button7);
+        btn7.setOnClickListener(this);
+        ImageButton btn8 = (ImageButton) findViewById(R.id.button8);
+        btn8.setOnClickListener(this);
+        ImageButton btn9 = (ImageButton) findViewById(R.id.button9);
+        btn9.setOnClickListener(this);
+        ImageButton btn10 = (ImageButton) findViewById(R.id.button10);
+        btn10.setOnClickListener(this);
+        ImageButton btn11 = (ImageButton) findViewById(R.id.button11);
+        btn11.setOnClickListener(this);
+        ImageButton btn12 = (ImageButton) findViewById(R.id.button12);
+        btn12.setOnClickListener(this);
 
         tornIA();
 
@@ -125,6 +132,42 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
                 System.out.println("has premut: 6");
                 arrayJugador.add(6);
                 comprovarBoto(6);
+                break;
+
+            case R.id.button7:
+                System.out.println("has premut: 7");
+                arrayJugador.add(7);
+                comprovarBoto(7);
+                break;
+
+            case R.id.button8:
+                System.out.println("has premut: 8");
+                arrayJugador.add(8);
+                comprovarBoto(8);
+                break;
+
+            case R.id.button9:
+                System.out.println("has premut: 9");
+                arrayJugador.add(9);
+                comprovarBoto(9);
+                break;
+
+            case R.id.button10:
+                System.out.println("has premut: 10");
+                arrayJugador.add(10);
+                comprovarBoto(10);
+                break;
+
+            case R.id.button11:
+                System.out.println("has premut: 11");
+                arrayJugador.add(11);
+                comprovarBoto(11);
+                break;
+
+            case R.id.button12:
+                System.out.println("has premut: 12");
+                arrayJugador.add(12);
+                comprovarBoto(12);
                 break;
 
             default:

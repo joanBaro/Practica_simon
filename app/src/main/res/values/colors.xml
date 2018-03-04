@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="column1">#27bc1c</color>
+    <color name="column2">#192fc2</color>
+    <color name="column3">#e4e710</color>
+    <color name="column4">#e7171c</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
