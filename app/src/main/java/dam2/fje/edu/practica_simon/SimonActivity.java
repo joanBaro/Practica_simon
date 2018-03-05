@@ -1,28 +1,67 @@
 package dam2.fje.edu.practica_simon;
 
+import android.graphics.drawable.AnimationDrawable;
+import android.os.Handler;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class SimonActivity extends AppCompatActivity implements View.OnClickListener {
 
     List<Integer> arrayJugador = new ArrayList<Integer>();
     List<Integer> arrayIA = new ArrayList<Integer>();
 
+
     public void tornIA(){
         //TODO mostrar imatges
 
         Random r = new Random();
-
         int aleatori = r.nextInt(13 - 1) + 1; // del 1 (inclos) al 13 (no inclos)
 
         arrayIA.add(aleatori);
+
+        final ImageView img = (ImageView) findViewById(R.id.imageView1);
+        img.setImageResource(R.mipmap.blanc);
+        findViewById(R.id.imageView1).setVisibility(View.VISIBLE);
+
+        final int []imageArray={R.mipmap.img1,R.mipmap.img2,R.mipmap.img3};
+
+        final boolean[] sortida = {false};
+
+
+        final Handler handler = new Handler();
+
+        Runnable runnable = new Runnable() {
+            int i = 0;
+
+            public void run() {
+                String pos = String.valueOf(arrayIA.get(i));
+                int id = getResources().getIdentifier("img" + pos,"mipmap", getPackageName());
+                System.out.println("entrada: " + i);
+                img.setImageResource(id);
+                i++;
+                if (i > arrayIA.size() - 1) {
+                    return;
+                }
+                handler.postDelayed(this, 800);
+            }
+        };
+       handler.postDelayed(runnable, 1000);
+
+       if(sortida[0]){
+           handler.removeCallbacks(runnable);
+       }
+
 
         System.out.println("array IA: " + arrayIA);
         System.out.println("ultima tirada IA: " + aleatori);
@@ -30,6 +69,7 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void comprovarBoto(int numero){
+        findViewById(R.id.imageView1).setVisibility(View.INVISIBLE);
         if(arrayIA.get(arrayJugador.size()-1) != arrayJugador.get(arrayJugador.size()-1)){
             System.out.println("has perdut");
             //TODO jugador perd, mostrar pantalla de derrota
@@ -77,20 +117,7 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
 
         tornIA();
 
-        /*
-        ImageView img = (ImageView) findViewById(R.id.imageView1);
-        img.setVisibility(View.VISIBLE);
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                findViewById(R.id.imageView1).setVisibility(View.INVISIBLE);
-                findViewById(R.id.imageView2).setVisibility(View.VISIBLE);
-                System.out.println("hola");
-            }
-        }, 2000);
-        */
     }
 
     @Override
