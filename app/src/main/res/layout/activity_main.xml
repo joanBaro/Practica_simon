@@ -7,22 +7,45 @@
     tools:context="dam2.fje.edu.practica_simon.MainActivity">
 
     <TextView
+        android:id="@+id/txtSimon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hola món"
+        android:text="Simon"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
+        app:layout_constraintVertical_bias="0.16" />
+
+    <ImageButton
+        android:id="@+id/btnMusic"
+        android:layout_width="28dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="447dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="16dp"
+        android:src="@mipmap/sound"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/playButton"
         android:layout_width="88dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="115dp"
+        android:layout_marginEnd="148dp"
         android:layout_marginStart="148dp"
-        android:text="Button"
+        android:layout_marginTop="215dp"
+        android:text="Jugar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="250dp" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSimon" />
 
 </android.support.constraint.ConstraintLayout>
