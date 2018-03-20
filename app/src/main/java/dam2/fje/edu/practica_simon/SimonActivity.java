@@ -1,5 +1,6 @@
 package dam2.fje.edu.practica_simon;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.os.Handler;
@@ -24,8 +25,6 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
 
 
     public void tornIA(){
-        //TODO mostrar imatges
-
         Random r = new Random();
         int aleatori = r.nextInt(13 - 1) + 1; // del 1 (inclos) al 13 (no inclos)
 
@@ -73,7 +72,8 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.imageView1).setVisibility(View.INVISIBLE);
         if(arrayIA.get(arrayJugador.size()-1) != arrayJugador.get(arrayJugador.size()-1)){
             System.out.println("has perdut");
-            //TODO jugador perd, mostrar pantalla de derrota
+            startActivity(new Intent(SimonActivity.this, ScoreActivity.class));
+            //TODO acualitzar firebase
         }else if (arrayJugador.size() == arrayIA.size()){
             System.out.println("mateixa mida, juga la maquina");
             System.out.println("arrayjugador(abans): " + arrayJugador);
