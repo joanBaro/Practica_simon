@@ -24,6 +24,7 @@ public class MainActivity extends ActionBarActivity {
        ImageButton btnMusica = (ImageButton)findViewById(R.id.btnMusic);
        Button btnJugar = (Button)findViewById(R.id.playButton);
 
+       //comentari
        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.m02_audio1);
        btnMusica.setOnClickListener(new View.OnClickListener() {
            @Override

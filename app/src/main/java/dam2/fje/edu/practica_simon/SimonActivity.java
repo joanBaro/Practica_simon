@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -26,7 +29,7 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
 
     public void tornIA(){
         Random r = new Random();
-        int aleatori = r.nextInt(13 - 1) + 1; // del 1 (inclos) al 13 (no inclos)
+        int aleatori = r.nextInt(13 - 1) + 1; // del 1 (inclòs) al 13 (no inclòs)
 
         arrayIA.add(aleatori);
 
@@ -73,7 +76,14 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
         if(arrayIA.get(arrayJugador.size()-1) != arrayJugador.get(arrayJugador.size()-1)){
             System.out.println("has perdut");
             startActivity(new Intent(SimonActivity.this, ScoreActivity.class));
+
+            DatabaseReference dbPuntuacio = FirebaseDatabase.getInstance().getReference("Puntuacio");
+
+            DatabaseReference entrada = dbPuntuacio.child("nom"); //nom usuari
+            entrada.setValue("puntuacio"); //puntuacio
+
             //TODO acualitzar firebase
+
         }else if (arrayJugador.size() == arrayIA.size()){
             System.out.println("mateixa mida, juga la maquina");
             System.out.println("arrayjugador(abans): " + arrayJugador);

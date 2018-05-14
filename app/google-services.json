@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "56005339854",
+    "firebase_url": "https://practicasimon-81b48.firebaseio.com",
+    "project_id": "practicasimon-81b48",
+    "storage_bucket": "practicasimon-81b48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56005339854:android:cb81aee8d03f5a0a",
+        "android_client_info": {
+          "package_name": "dam2.fje.edu.practica_simon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "56005339854-eeq9hqrf7pk73k836puilecegrm1u0op.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dam2.fje.edu.practica_simon",
+            "certificate_hash": "08276481f7a5ba429a25cfb399e768eda2fc66eb"
+          }
+        },
+        {
+          "client_id": "56005339854-28dco2hqif43vd0qkb1b6o9jmd0o9q7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD2vyQ58LZoqsY2EE5BZ908YKYLpOWhoY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "56005339854-28dco2hqif43vd0qkb1b6o9jmd0o9q7d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
