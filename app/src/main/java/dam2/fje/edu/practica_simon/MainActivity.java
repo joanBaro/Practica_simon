@@ -3,6 +3,7 @@ package dam2.fje.edu.practica_simon;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.IntentService;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -15,32 +16,43 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends ActionBarActivity {
-
+    boolean bmusic = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       ImageButton btnMusica = (ImageButton)findViewById(R.id.btnMusic);
-       Button btnJugar = (Button)findViewById(R.id.playButton);
 
-       //comentari
-       final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.m02_audio1);
-       btnMusica.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               if (mediaPlayer.isPlaying()) {
-                   mediaPlayer.pause();
-               }else{
-                   mediaPlayer.start();
-               }
-           }
-       });
 
+        Button btnJugar = (Button)findViewById(R.id.playButton);
+        ImageButton btnMusica = (ImageButton)findViewById(R.id.btnMusic);
+
+
+        final Intent i = new Intent(this, MyService.class);
+
+        btnMusica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!bmusic){
+                    startService(i);
+                    bmusic = true;
+                } else{
+                    stopService(i);
+                    bmusic = false;
+                }
+
+
+
+
+
+            }
+        });
        btnJugar.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               startActivity(new Intent(MainActivity.this, SimonActivity.class));           }
+               startActivity(new Intent(MainActivity.this, SimonActivity.class));
+               //stopService(i);
+               }
        });
     }
 
@@ -57,5 +69,8 @@ public class MainActivity extends ActionBarActivity {
         stopService(intent);
         System.out.println( "servei aturat");
     }*/
-  
+
 }
+
+//todo service->musica inicial joc
+//todo intentservice->musica botons.

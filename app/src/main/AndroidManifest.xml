@@ -19,7 +19,12 @@
         <activity android:name=".ActionBarActivity" />
         <activity android:name=".WebviewActivity" />
         <activity android:name=".SimonActivity" />
-        <activity android:name=".ScoreActivity"/>
+        <activity android:name=".ScoreActivity" />
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
