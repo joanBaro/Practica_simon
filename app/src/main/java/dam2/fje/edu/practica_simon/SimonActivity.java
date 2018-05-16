@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -25,6 +26,7 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
 
     List<Integer> arrayJugador = new ArrayList<Integer>();
     List<Integer> arrayIA = new ArrayList<Integer>();
+    private int scoreInt = 0;
 
 
     public void tornIA(){
@@ -75,14 +77,11 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.imageView1).setVisibility(View.INVISIBLE);
         if(arrayIA.get(arrayJugador.size()-1) != arrayJugador.get(arrayJugador.size()-1)){
             System.out.println("has perdut");
-            startActivity(new Intent(SimonActivity.this, ScoreActivity.class));
-
-            DatabaseReference dbPuntuacio = FirebaseDatabase.getInstance().getReference("Puntuacio");
-
-            DatabaseReference entrada = dbPuntuacio.child("nom"); //nom usuari
-            entrada.setValue("puntuacio"); //puntuacio
-
-            //TODO acualitzar firebase
+            //startActivity(new Intent(SimonActivity.this, ScoreActivity.class));
+            Intent intent = new Intent(SimonActivity.this, ScoreActivity.class);
+            intent.putExtra("Score", arrayIA.size() - 1);
+            startActivity(intent);
+            //TODO afegir nom jugador
 
         }else if (arrayJugador.size() == arrayIA.size()){
             System.out.println("mateixa mida, juga la maquina");
