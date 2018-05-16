@@ -7,14 +7,25 @@
     tools:context="dam2.fje.edu.practica_simon.ScoreActivity">
 
     <ListView
-        android:id="@+id/ListView1"
-        android:layout_width="301dp"
-        android:layout_height="207dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginStart="42dp"
+        android:id="@+id/ListView2"
+        android:layout_width="113dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="68dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/ListView1"
+        app:layout_constraintTop_toBottomOf="@+id/txtSimon">
+
+    </ListView>
+
+    <ListView
+        android:id="@+id/ListView1"
+        android:layout_width="167dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="68dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSimon">
 
