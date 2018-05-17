@@ -80,6 +80,7 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
             //startActivity(new Intent(SimonActivity.this, ScoreActivity.class));
             Intent intent = new Intent(SimonActivity.this, ScoreActivity.class);
             intent.putExtra("Score", arrayIA.size() - 1);
+            intent.putExtra("Name", getIntent().getStringExtra("Name"));
             startActivity(intent);
             //TODO afegir nom jugador
 

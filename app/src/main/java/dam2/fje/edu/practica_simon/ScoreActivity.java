@@ -39,7 +39,7 @@ public class ScoreActivity extends AppCompatActivity {
     }
 
     protected void updateFirebase(){
-        DatabaseReference entrada = dbPuntuacio.child("andro"); //nom usuari
+        DatabaseReference entrada = dbPuntuacio.child(getIntent().getStringExtra("Name")); //nom usuari
         entrada.setValue(Score); //puntuacio
         //TODO acualitzar firebase
     }

@@ -11,18 +11,21 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends ActionBarActivity {
     boolean bmusic = false;
+    protected EditText text;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        text = (EditText)findViewById(R.id.entradaNom);
 
         Button btnJugar = (Button)findViewById(R.id.playButton);
         ImageButton btnMusica = (ImageButton)findViewById(R.id.btnMusic);
@@ -42,18 +45,20 @@ public class MainActivity extends ActionBarActivity {
                 }
 
 
-
-
-
             }
         });
-       btnJugar.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               startActivity(new Intent(MainActivity.this, SimonActivity.class));
-               //stopService(i);
-               }
-       });
+        if (text.getText().toString().matches("[a-zA-Z_ ]{1,8}")) {
+            btnJugar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, SimonActivity.class);
+                    intent.putExtra("Name", text.getText().toString());
+                    startActivity(intent);
+                    //stopService(i);
+                }
+            });
+        }else System.out.println("Invalid name");
+
     }
 
 

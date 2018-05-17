@@ -10,7 +10,7 @@
         android:id="@+id/txtSimon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Simon"
+        android:text="@string/simon"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -36,13 +36,27 @@
 
     <Button
         android:id="@+id/playButton"
-        android:layout_width="124dp"
+        android:layout_width="94dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="440dp"
-        android:text="Jugar"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="284dp"
+        android:text="@string/jugar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toEndOf="@+id/entradaNom"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/entradaNom"
+        android:layout_width="215dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="286dp"
+        android:allowUndo="true"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/nom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

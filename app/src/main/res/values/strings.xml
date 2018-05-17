@@ -2,4 +2,7 @@
     <string name="app_name">Simon</string>
     <string name="ajuda">Ajuda</string>
     <string name="sortir">Sortir</string>
+    <string name="jugar">Jugar</string>
+    <string name="simon">Simon</string>
+    <string name="nom">Nom</string>
 </resources>
