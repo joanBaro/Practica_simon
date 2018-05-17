@@ -132,6 +132,8 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v){
+        Intent intent = new Intent(this,SimonIntentService.class);
+        String nota= "";
         final MediaPlayer mediaPlayer;
         switch (v.getId()) {
 
@@ -139,8 +141,9 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
                 System.out.println("has premut: 1");
                 arrayJugador.add(1);
                 comprovarBoto(1);
-                mediaPlayer = MediaPlayer.create(this,R.raw.do_oct);
-                mediaPlayer.start();
+                nota = "do_oct";
+                intent.putExtra("nota",nota);
+                startService(intent);
                 System.out.println(arrayJugador);
                 break;
 
@@ -149,88 +152,99 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
 
                 arrayJugador.add(2);
                 comprovarBoto(2);
-                mediaPlayer = MediaPlayer.create(this,R.raw.re);
-                mediaPlayer.start();
+                nota = "re";
+                intent.putExtra("nota",nota);
+                startService(intent);
                 break;
 
             case R.id.button3:
                 System.out.println("has premut: 3");
                 arrayJugador.add(3);
                 comprovarBoto(3);
-                mediaPlayer = MediaPlayer.create(this,R.raw.mi);
-                mediaPlayer.start();
+                nota = "mi";
+                intent.putExtra("nota",nota);
+                startService(intent);
                 break;
 
             case R.id.button4:
                 System.out.println("has premut: 4");
                 arrayJugador.add(4);
                 comprovarBoto(4);
-                mediaPlayer = MediaPlayer.create(this,R.raw.fa);
-                mediaPlayer.start();
+                nota = "fa";
+                intent.putExtra("nota",nota);
+                startService(intent);
                 break;
 
             case R.id.button5:
                 System.out.println("has premut: 5");
                 arrayJugador.add(5);
                 comprovarBoto(5);
-                mediaPlayer = MediaPlayer.create(this,R.raw.sol);
-                mediaPlayer.start();
+                nota = "sol";
+                intent.putExtra("nota",nota);
+                startService(intent);
                 break;
 
             case R.id.button6:
                 System.out.println("has premut: 6");
                 arrayJugador.add(6);
                 comprovarBoto(6);
-                mediaPlayer = MediaPlayer.create(this,R.raw.la);
-                mediaPlayer.start();
+                nota = "la";
+                intent.putExtra("nota",nota);
+                startService(intent);
                 break;
 
             case R.id.button7:
                 System.out.println("has premut: 7");
                 arrayJugador.add(7);
                 comprovarBoto(7);
-                mediaPlayer = MediaPlayer.create(this,R.raw.do_str);
-                mediaPlayer.start();
+                nota = "do_str";
+                intent.putExtra("nota",nota);
+                startService(intent);
                 break;
 
             case R.id.button8:
                 System.out.println("has premut: 8");
                 arrayJugador.add(8);
                 comprovarBoto(8);
-                mediaPlayer = MediaPlayer.create(this,R.raw.re_str);
-                mediaPlayer.start();
+                nota = "re_str";
+                intent.putExtra("nota",nota);
+                startService(intent);
                 break;
 
             case R.id.button9:
                 System.out.println("has premut: 9");
                 arrayJugador.add(9);
                 comprovarBoto(9);
-                mediaPlayer = MediaPlayer.create(this,R.raw.mi_str);
-                mediaPlayer.start();
+                nota = "mi_str";
+                intent.putExtra("nota",nota);
+                startService(intent);
                 break;
 
             case R.id.button10:
                 System.out.println("has premut: 10");
                 arrayJugador.add(10);
                 comprovarBoto(10);
-                mediaPlayer = MediaPlayer.create(this,R.raw.fa_str);
-                mediaPlayer.start();
+                nota = "fa_str";
+                intent.putExtra("nota",nota);
+                startService(intent);
                 break;
 
             case R.id.button11:
                 System.out.println("has premut: 11");
                 arrayJugador.add(11);
                 comprovarBoto(11);
-                mediaPlayer = MediaPlayer.create(this,R.raw.sol_str);
-                mediaPlayer.start();
+                nota = "sol_str";
+                intent.putExtra("nota",nota);
+                startService(intent);
                 break;
 
             case R.id.button12:
                 System.out.println("has premut: 12");
                 arrayJugador.add(12);
                 comprovarBoto(12);
-                mediaPlayer = MediaPlayer.create(this,R.raw.si_str);
-                mediaPlayer.start();
+                nota = "si_str";
+                intent.putExtra("nota",nota);
+                startService(intent);
                 break;
 
             default:

@@ -25,6 +25,7 @@
             android:name=".MyService"
             android:enabled="true"
             android:exported="true"></service>
+        <service android:name=".SimonIntentService"></service>
     </application>
 
 </manifest>
