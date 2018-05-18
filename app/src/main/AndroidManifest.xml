@@ -19,7 +19,8 @@
         <activity android:name=".ActionBarActivity" />
         <activity android:name=".WebviewActivity" />
         <activity android:name=".SimonActivity" />
-        <activity android:name=".ScoreActivity" />
+        <activity android:name=".ScoreActivity"
+            android:parentActivityName=".MainActivity" />
 
         <service
             android:name=".MyService"
