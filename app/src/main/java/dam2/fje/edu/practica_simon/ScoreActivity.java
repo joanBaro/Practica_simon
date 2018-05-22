@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static dam2.fje.edu.practica_simon.MainActivity.changeTheme;
+
 public class ScoreActivity extends AppCompatActivity {
 
     private DatabaseReference dbPuntuacio = FirebaseDatabase.getInstance().getReference("Puntuacio");
@@ -31,6 +33,7 @@ public class ScoreActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(changeTheme) setTheme(R.style.AppTheme3);
         setContentView(R.layout.activity_score);
 
         int scoreInt = getIntent().getIntExtra("Score",0);

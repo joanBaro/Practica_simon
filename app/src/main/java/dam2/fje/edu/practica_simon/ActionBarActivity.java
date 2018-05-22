@@ -26,6 +26,9 @@ public class ActionBarActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
+            case R.id.canvi_tema:
+                canviTema();
+                return true;
             case R.id.ajuda:
                 obrirAjuda();
                 return true;
@@ -41,6 +44,13 @@ public class ActionBarActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void canviTema(){
+        MainActivity.changeTheme = MainActivity.changeTheme ? false : true;
+
+        finish();
+        startActivity(getIntent());
     }
 
     private void obrirAjuda() {

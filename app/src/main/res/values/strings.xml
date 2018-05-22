@@ -5,5 +5,8 @@
     <string name="jugar">Jugar</string>
     <string name="simon">Simon</string>
     <string name="nom">Nom</string>
-    <string name="desenvolupadors">desenvolupadors</string>
+    <string name="desenvolupadors">Crèdits</string>
+    <string name="canvi_tema">Canvi Tema</string>
+
+
 </resources>

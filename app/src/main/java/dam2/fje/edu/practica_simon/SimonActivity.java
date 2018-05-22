@@ -22,6 +22,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import static dam2.fje.edu.practica_simon.MainActivity.changeTheme;
+
 public class SimonActivity extends AppCompatActivity implements View.OnClickListener {
 
     List<Integer> arrayJugador = new ArrayList<Integer>();
@@ -100,6 +102,7 @@ public class SimonActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(changeTheme) setTheme(R.style.AppTheme2);
         setContentView(R.layout.activity_simon);
 
         ImageButton btn1 =  (ImageButton) findViewById(R.id.button1);

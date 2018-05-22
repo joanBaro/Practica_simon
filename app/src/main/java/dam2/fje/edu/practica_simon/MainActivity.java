@@ -22,17 +22,18 @@ import android.widget.ListView;
 public class MainActivity extends ActionBarActivity{
     boolean bmusic = false;
     protected EditText text;
+    public static boolean changeTheme = false;
     MyView mCustomDrawableView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(changeTheme) setTheme(R.style.AppTheme2);
         setContentView(R.layout.activity_main);
         //MyView demoview = new MyView(this);
         //setContentView(demoview);
-
-
+        System.out.println("tema : ------------------ " + changeTheme);
 
         text = (EditText)findViewById(R.id.entradaNom);
 

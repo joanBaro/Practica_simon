@@ -6,5 +6,10 @@
     <color name="column4">#e7171c</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#ff4081</color>
+
+    <color name="colorPrimary2">#45c658</color>
+    <color name="colorPrimaryDark2">#3ea74d</color>
+    <color name="colorAccent2">#ea7b31</color>
+    <color name="backgroundDark">#103241</color>
 </resources>

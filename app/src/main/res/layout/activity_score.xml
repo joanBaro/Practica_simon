@@ -8,11 +8,11 @@
 
     <ListView
         android:id="@+id/ListView2"
+        style="@style/listViewStyle"
         android:layout_width="113dp"
         android:layout_height="0dp"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="68dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toEndOf="@+id/ListView1">
@@ -25,7 +25,8 @@
         android:layout_height="0dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="68dp"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/listViewStyle">
 
     </ListView>
 
