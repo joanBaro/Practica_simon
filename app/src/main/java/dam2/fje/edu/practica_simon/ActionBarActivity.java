@@ -29,6 +29,9 @@ public class ActionBarActivity extends AppCompatActivity {
             case R.id.ajuda:
                 obrirAjuda();
                 return true;
+            case R.id.developers:
+                obrirDevelopers();
+                return true;
             case R.id.sortir:
                 obrirSortida();
                 return true;
@@ -49,6 +52,10 @@ public class ActionBarActivity extends AppCompatActivity {
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(1);
 
+    }
+
+    private void obrirDevelopers() {
+        startActivity(new Intent(ActionBarActivity.this, DevelopersActivity.class));
     }
 
     private void musica() {

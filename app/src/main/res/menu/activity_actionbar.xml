@@ -6,6 +6,9 @@
     <item android:id="@+id/ajuda"
         android:title="@string/ajuda" />
 
+    <item android:id="@+id/developers"
+        android:title="@string/desenvolupadors" />
+
     <item android:id="@+id/sortir"
         android:title="@string/sortir" />
 

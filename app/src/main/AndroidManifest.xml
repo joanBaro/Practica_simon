@@ -19,6 +19,7 @@
         <activity android:name=".ActionBarActivity" />
         <activity android:name=".WebviewActivity" />
         <activity android:name=".SimonActivity" />
+
         <activity android:name=".ScoreActivity"
             android:parentActivityName=".MainActivity" />
 
@@ -27,6 +28,8 @@
             android:enabled="true"
             android:exported="true"></service>
         <service android:name=".SimonIntentService"></service>
+
+        <activity android:name=".DevelopersActivity" />
     </application>
 
 </manifest>
