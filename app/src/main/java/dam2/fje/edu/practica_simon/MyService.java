@@ -4,6 +4,8 @@ import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
+import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyManager;
 import android.view.View;
 
 public class MyService extends Service {
@@ -41,6 +43,27 @@ public class MyService extends Service {
         super.onDestroy();
         mediaPlayer.stop();
     }
+
+    PhoneStateListener phoneStateListener = new PhoneStateListener() {
+        @Override
+        public void onCallStateChanged(int state, String incomingNumber) {
+            if (state == TelephonyManager.CALL_STATE_RINGING) {
+                mediaPlayer.stop();
+            } else if(state == TelephonyManager.CALL_STATE_IDLE) {
+                mediaPlayer.start();
+
+            } else if(state == TelephonyManager.CALL_STATE_OFFHOOK) {
+                mediaPlayer.stop();
+                TelephonyManager mgr = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+                if(mgr != null) {
+                    mgr.listen(phoneStateListener, PhoneStateListener.LISTEN_NONE);
+                }
+            }
+            super.onCallStateChanged(state, incomingNumber);
+        }
+
+    };
+
 
     @Override
     public IBinder onBind(Intent intent) {
